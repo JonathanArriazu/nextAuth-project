@@ -2,14 +2,14 @@
 import {signIn} from 'next-auth/react'
 import React from 'react'
 
-const SignIn = () => {
+const SignIn = ({ callbackUrl}) => {
   return (
     <div>
         <h2>Sign In With NextAuth</h2>
         
         {/* Google Login */}
         <div styles={{margin: '30px 0'}}>
-            <button onClick={ () => signIn('google', {callbackUrl: "/"}) }>
+            <button onClick={ () => signIn('google', {callbackUrl}) }>
                 Continue with Google
             </button>
         </div>
