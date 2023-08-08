@@ -1,9 +1,10 @@
 import React from 'react'
+import SignIn from '@/components/Global/Auth/SignIn'
 
-const SignIn = () => {
+const SignInPage = () => {
   return (
-    <div>SigIn</div>
+    <SignIn />
   )
 }
 
-export default SignIn
+export default SignInPage
