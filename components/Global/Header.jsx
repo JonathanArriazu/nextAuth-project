@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import SignOut from '../Auth/SignOut';
 
 const Header = async () => {
 
@@ -21,6 +22,8 @@ const Header = async () => {
               <Link href="/profile/client">Profile (client)</Link>
               <Link href="/profile/server">Profile (server)</Link>
               <Link href="/dashboard">Admin Dashboard</Link>
+
+              <SignOut />
             </>
           : <Link href="/signin">SignIn</Link>
         }
