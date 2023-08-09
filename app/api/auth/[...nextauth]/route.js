@@ -49,7 +49,7 @@ async function signInWithOAuth({account, profile}) {
   const newUser = new User({
     name: profile.name,
     email: profile.email,
-    image: profile.image,
+    image: profile.picture,
     provider: account.provider
   });
 
