@@ -3,20 +3,14 @@ import { Schema, model, models } from 'mongoose'
 const userSchema = new Schema({
     name: {
         type: String,
-        required: true,
-        maxlength: 32
+        required: true
     },
     email: {
         type: String,
         required: true,
-        maxlength: 32,
         unique: true
     },
-    password: {
-        type: String,
-        required: true,
-        maxlength: 32
-    },
+    password: String,
     image: String,
     role: {
         type: String,
@@ -26,8 +20,9 @@ const userSchema = new Schema({
         type: String,
         default: 'credentials'
     }
-}, { timestamps: true })
+}, {timestamps: true})
 
-const User = model.user || model('user', userSchema)
+const User = models.user || model('user', userSchema)
 
 export default User
+
