@@ -7,8 +7,6 @@ const Header = async () => {
 
   const session = await getServerSession(authOptions);
 
-  console.log({session})
-
   return (
     <header style={{display: 'flex', gap: 30}}>
         <Link href="/">Home</Link>
