@@ -3,11 +3,17 @@ import Form from '../Global/Form'
 import { updateUser } from '@/actions/authActions';
 import Button from '../Global/Button';
 
-const ProfileUpdate = () => {
+const ProfileUpdate = ({update}) => {
 
   async function handleUpdateProfile(formData){
     const name = formData.get('name');
     const image = formData.get('image');
+
+    if(update){
+        //when update() is run client side, the page will re-render
+        //server side won't re-render
+        update({name, image})
+    }
 
     const res = await updateUser({name, image})
     if(res?.msg) {
